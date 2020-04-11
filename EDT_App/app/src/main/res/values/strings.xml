@@ -37,15 +37,26 @@
     <string name="senace2">TP</string>
     <string name="senace3">COURS</string>
     <string name="senace4">PROJET</string>
+    <string name="jour">Dimanche</string>
+    <string name="deb">10:00</string>
 
+    <string name="time08">08:30</string>
+    <string name="time103">10:30</string>
+    <string name="time100">10:00</string>
+    <string name="time101">10:10</string>
+    <string name="time104">10:40</string>
+    <string name="time121">12:10</string>
+    <string name="time124">12:40</string>
+    <string name="time13">13:00</string>
+    <string name="time15">15:00</string>
+    <string name="time151">15:10</string>
+    <string name="time171">17:10</string>
 
-
-
-
-
-
-
-
+    <string name="date1">Avril,12 2020</string>
+    <string name="date2">Avril,13 2020</string>
+    <string name="date3">Avril,14 2020</string>
+    <string name="date4">Avril,15 2020</string>
+    <string name="date5">Avril,16 2020</string>
 
 
 </resources>

@@ -34,9 +34,9 @@ class DetailsEnsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         seance = arguments?.getSerializable("seance") as Seance
-        nomView=v?.findViewById(R.id.nomEnsText)
-        mailView=v?.findViewById(R.id.mailEnsText)
-        diplomeView=v?.findViewById(R.id.diplomeText)
+        nomView=v?.findViewById(R.id.nomEnsView)
+        mailView=v?.findViewById(R.id.mailEnsView)
+        diplomeView=v?.findViewById(R.id.diplomeEnsView)
 
         nomView?.text=seance.module?.ens?.nom
         mailView?.text=seance.module?.ens?.mail

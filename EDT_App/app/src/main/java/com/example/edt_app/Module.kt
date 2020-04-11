@@ -4,6 +4,6 @@ import java.io.Serializable
 import java.time.Duration
 
 data class Module (val intitule:String?,
-                   val duree:Duration?,
+                   val duree:Int?,
                    val ens:Enseignant
 ):Serializable

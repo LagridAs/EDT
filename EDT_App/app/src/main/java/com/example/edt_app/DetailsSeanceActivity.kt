@@ -1,5 +1,6 @@
 package com.example.edt_app
 
+import android.content.ContentValues
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.activity_details_seance.*
+import java.sql.Date
+import java.sql.Time
+import java.time.LocalDate
 import java.time.LocalTime
+import kotlin.time.hours
 
 class DetailsSeanceActivity : AppCompatActivity(),CommSeance {
     private var jour:Jour?=null
@@ -21,7 +26,8 @@ class DetailsSeanceActivity : AppCompatActivity(),CommSeance {
     private lateinit var ensList:MutableList<Enseignant>
     private lateinit var moduleList:MutableList<Module>
     private lateinit var seanceAdapter: SeanceAdapter
-    private lateinit var layoutManager: GridLayoutManager
+    private lateinit var layoutManagerSeance: GridLayoutManager
+    private lateinit var t:Time
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +35,10 @@ class DetailsSeanceActivity : AppCompatActivity(),CommSeance {
         setContentView(R.layout.activity_details_seance)
         //jour=intent.getStringExtra("jour") as Jour
         jour=intent.getSerializableExtra("jour") as Jour
+        Log.d(ContentValues.TAG,"dakhal details seance activity")
+        Log.d(ContentValues.TAG, jour!!.name.toString())
+
+
 
 
         ensList= mutableListOf(
@@ -48,29 +58,32 @@ class DetailsSeanceActivity : AppCompatActivity(),CommSeance {
             Module(getString(R.string.module5),2,ensList[4])
             )
 
-            dimList= mutableListOf(
-                Seance(getString(R.string.senace1), null,LocalTime.of(8, 30, 0),LocalTime.of(10, 30, 0),moduleList[0],getString(R.string.salle1)),
-                Seance(getString(R.string.senace2), null,LocalTime.of(10, 40, 0),LocalTime.of(12, 10, 0),moduleList[1],getString(R.string.salle2)),
-                Seance(getString(R.string.senace3),null, LocalTime.of(13, 0,0),LocalTime.of(15, 0, 0),moduleList[2],getString(R.string.salle3)),
-                Seance(getString(R.string.senace1),null, LocalTime.of(15, 10, 0),LocalTime.of(17, 10, 0),moduleList[3],getString(R.string.salle4))
+        Log.d(ContentValues.TAG,"tahtiii kayen hadikk ta3 localTimeeeeeee")
+
+
+        dimList= mutableListOf(
+                Seance(getString(R.string.senace1), getString(R.string.date1),getString(R.string.time08),getString(R.string.time103),moduleList[0],getString(R.string.salle1)),
+                Seance(getString(R.string.senace2), getString(R.string.date1),getString(R.string.time104),getString(R.string.time121),moduleList[1],getString(R.string.salle2)),
+                Seance(getString(R.string.senace3),getString(R.string.date1), getString(R.string.time13),getString(R.string.time15),moduleList[2],getString(R.string.salle3)),
+                Seance(getString(R.string.senace1),getString(R.string.date1), getString(R.string.time151),getString(R.string.time171),moduleList[3],getString(R.string.salle4))
             )
             lunList= mutableListOf(
-                Seance(getString(R.string.senace1), null,LocalTime.of(8, 30, 0),LocalTime.of(10, 0, 0),moduleList[5],getString(R.string.salle5)),
-                Seance(getString(R.string.senace2),null, LocalTime.of(10, 10, 0),LocalTime.of(12, 10, 0),moduleList[2],getString(R.string.salle2)),
-                Seance(getString(R.string.senace3),null, LocalTime.of(13, 0,0),LocalTime.of(15, 0, 0),moduleList[4],getString(R.string.salle4))
+                Seance(getString(R.string.senace1), getString(R.string.date2),getString(R.string.time08),getString(R.string.time100),moduleList[0],getString(R.string.salle5)),
+                Seance(getString(R.string.senace2),getString(R.string.date2), getString(R.string.time101),getString(R.string.time121),moduleList[2],getString(R.string.salle2)),
+                Seance(getString(R.string.senace3),getString(R.string.date2), getString(R.string.time13),getString(R.string.time15),moduleList[4],getString(R.string.salle4))
             )
             marList= mutableListOf(
-                Seance(getString(R.string.senace1),null, LocalTime.of(8, 30, 0),LocalTime.of(10, 30, 0),moduleList[5],getString(R.string.salle1)),
-                Seance(getString(R.string.senace1), null,LocalTime.of(10, 40, 0),LocalTime.of(12, 40, 0),moduleList[6],getString(R.string.salle3))
+                Seance(getString(R.string.senace1),getString(R.string.date3),getString(R.string.time08),getString(R.string.time103),moduleList[3],getString(R.string.salle1)),
+                Seance(getString(R.string.senace1), getString(R.string.date3),getString(R.string.time104),getString(R.string.time124),moduleList[2],getString(R.string.salle3))
             )
             merList= mutableListOf(
-                Seance(getString(R.string.senace1),null, LocalTime.of(8, 30, 0),LocalTime.of(10, 30, 0),moduleList[4],getString(R.string.salle4)),
-                Seance(getString(R.string.senace2), null,LocalTime.of(10, 40, 0),LocalTime.of(12, 10, 0),moduleList[3],getString(R.string.salle3)),
-                Seance(getString(R.string.senace3), null,LocalTime.of(13, 0,0),LocalTime.of(15, 0, 0),moduleList[1],getString(R.string.salle1))
+                Seance(getString(R.string.senace1),getString(R.string.date4), getString(R.string.time08),getString(R.string.time103),moduleList[4],getString(R.string.salle4)),
+                Seance(getString(R.string.senace2), getString(R.string.date4),getString(R.string.time104),getString(R.string.time121),moduleList[3],getString(R.string.salle3)),
+                Seance(getString(R.string.senace3), getString(R.string.date4),getString(R.string.time13),getString(R.string.time15),moduleList[1],getString(R.string.salle1))
             )
             jeuList= mutableListOf(
-                Seance(getString(R.string.senace4),null, LocalTime.of(8, 30, 0),LocalTime.of(12, 0, 0),moduleList[3],getString(R.string.salle3)),
-                Seance(getString(R.string.senace3),null, LocalTime.of(13, 0, 0),LocalTime.of(15, 0, 0),moduleList[1],getString(R.string.salle1))
+                Seance(getString(R.string.senace4),getString(R.string.date5),getString(R.string.time08),getString(R.string.time121),moduleList[3],getString(R.string.salle3)),
+                Seance(getString(R.string.senace3),getString(R.string.date5), getString(R.string.time13),getString(R.string.time15),moduleList[1],getString(R.string.salle1))
             )
 
         when(jour!!.name) {
@@ -81,16 +94,18 @@ class DetailsSeanceActivity : AppCompatActivity(),CommSeance {
             JourEnum.JEUDI -> seanceAdapter= SeanceAdapter(jeuList)
         }
 
-        layoutManager= GridLayoutManager(this,2)
+        layoutManagerSeance= GridLayoutManager(this,2)
         recyclerSeance.apply {
             adapter=seanceAdapter
-            layoutManager=layoutManager
+            layoutManager=layoutManagerSeance
+            Log.d(ContentValues.TAG,"initialisina recyclerSeance")
+
         }
         val fragment= DetailsModFragment()
         val reference= R.id.moduleplace
         seanceAdapter.onItemClick = { seance ->
             passSeance(seance,fragment,reference)
-            Log.d("SeanceAct", seance.nom)
+            Log.d(ContentValues.TAG,"passina seance")
         }
 
 
@@ -99,7 +114,7 @@ class DetailsSeanceActivity : AppCompatActivity(),CommSeance {
     }
 
     override fun passSeance(seance: Seance,fragment: Fragment,reference:Int) {
-        Log.d("DetailsSc",seance.nom)
+        Log.d(ContentValues.TAG,"dakhal passSeance")
         val bundle1 = Bundle()
         bundle1.putSerializable("seance",seance)
         val transaction = this.supportFragmentManager.beginTransaction()

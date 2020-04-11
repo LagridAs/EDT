@@ -8,10 +8,11 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(),CommJour {
+class JourListActivity : AppCompatActivity() {
+
     private lateinit var jourAdapter:JourAdapter
     private lateinit var jourList:MutableList<Jour>
-    private lateinit var linearLayoutManager:LinearLayoutManager
+    private lateinit var linearLayoutManager: LinearLayoutManager
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(),CommJour {
     }
     override fun jrComm(jour: Jour) {
         Log.d(ContentValues.TAG,"dakhal jrComm")
-        val intent = Intent(this@MainActivity,DetailsSeanceActivity::class.java)
+        val intent = Intent(this@JourListActivity,DetailsSeanceActivity::class.java)
         intent.putExtra("jour",jour)
         startActivity(intent) }
 }

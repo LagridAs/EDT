@@ -5,8 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -29,24 +27,31 @@ class SeanceAdapter(private val seanceList:MutableList<Seance>): RecyclerView.Ad
 
     /***********ViewHolder******************/
     inner class SeanceHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        private var picLivre: ImageView?=null
-        private var titrLivre: TextView?=null
-        private var autrLivre: TextView?=null
-        private var voirLivreBtn: Button?=null
+        private var nomSeance:TextView?=null
+        private var dateSeance:TextView?=null
+        private var salleSeance:TextView?=null
+        private var debSeance:TextView?=null
+        private var finSeance:TextView?=null
+        private var modName:TextView?=null
 
         init {
-            picLivre=itemView.findViewById(R.id.livrepic)
-            titrLivre=itemView.findViewById(R.id.titreLiv)
-            autrLivre=itemView.findViewById(R.id.auteur)
-            voirLivreBtn=itemView.findViewById(R.id.voirBtn)
+            nomSeance=itemView.findViewById(R.id.nomSeanceView)
+            dateSeance=itemView.findViewById(R.id.dateSeanceView)
+            salleSeance=itemView.findViewById(R.id.salleSeanceView)
+            debSeance=itemView.findViewById(R.id.debSeanceView)
+            finSeance=itemView.findViewById(R.id.FinSeanceView)
+            modName=itemView.findViewById(R.id.moduleSeanceNameView)
         }
 
         fun bind(seance: Seance){
-            livre.imageLivre?.let { picLivre?.setImageResource(it) }
-            titrLivre?.text=livre.titre
-            Log.d(ContentValues.TAG,titrLivre?.text as String)
-            autrLivre?.text="de".plus(" ").plus(livre.auteur?.Nom)
-            voirLivreBtn?.setOnClickListener{
+            nomSeance?.text=seance.nom
+            dateSeance?.text=seance.date.toString()
+            salleSeance?.text=seance.salle
+            debSeance?.text=seance.tempsDeb.toString()
+            finSeance?.text=seance.tempsFin.toString()
+            modName?.text=seance.module?.intitule
+
+            itemView?.setOnClickListener{
                 onItemClick?.invoke(seance)
             }
         }

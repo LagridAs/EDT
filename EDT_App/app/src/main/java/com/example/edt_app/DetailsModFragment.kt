@@ -10,11 +10,11 @@ import android.widget.TextView
 
 class DetailsModFragment : Fragment() {
     private var v:View?=null
-    private var ensBtn:Button?=null
     lateinit var comm: CommSeance
     private lateinit var seance:Seance
     private var intituleView:TextView?=null
     private var dureeView:TextView?=null
+    private var ensView:TextView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,18 +33,19 @@ class DetailsModFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         comm = activity as CommSeance
 
-        intituleView= v?.findViewById(R.id.intitText)
-        dureeView= v?.findViewById(R.id.dureText)
-        ensBtn=v?.findViewById(R.id.ensButton)
+        intituleView= v?.findViewById(R.id.intituleModView)
+        dureeView= v?.findViewById(R.id.dureeModView)
+        ensView=v?.findViewById(R.id.ensModView)
 
         seance= arguments?.getSerializable("seance") as Seance
         intituleView?.text=seance.module?.intitule
         dureeView?.text=seance.module?.duree.toString()
+        ensView?.text=seance.module?.ens?.nom
 
 
         val fragment=DetailsEnsFragment()
-        val reference= R.id.ensPlace
-        ensBtn?.setOnClickListener {
+        val reference= R.id.moduleplace
+        ensView?.setOnClickListener {
             comm.passSeance(seance,fragment,reference)
         }
     }
