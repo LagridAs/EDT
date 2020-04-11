@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">EDT_App</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ensname1">Yacine CHALLAL</string>
+    <string name="ensname2">HAMIDI Samir</string>
+    <string name="ensname3">DIB Ahmed</string>
+    <string name="ensname4">IMLOUL salima</string>
+    <string name="ensname5">ROUABHIA Ahmed</string>
+
+    <string name="mail1">y_challal@esi.dz</string>
+    <string name="mail2">s_hamidi@esi.dz</string>
+    <string name="mail3">a_dib@esi.dz</string>
+    <string name="mail4">s_imloul@esi.dz</string>
+    <string name="mail5">a_rouabhia@esi.dz</string>
+
+    <string name="diplome1">Securité informatique</string>
+    <string name="diplome2">Analyse mathematique</string>
+    <string name="diplome3">Analyse Numerique</string>
+    <string name="diplome4">Probalité</string>
+    <string name="diplome5">Electronique fondamental</string>
+
+    <string name="module1">IPLS</string>
+    <string name="module2">ANALYSE</string>
+    <string name="module3">ANUM</string>
+    <string name="module4">PRST</string>
+    <string name="module5">ELECF</string>
+
+    <string name="salle1">CYBER</string>
+    <string name="salle2">S10</string>
+    <string name="salle3">CP4</string>
+    <string name="salle4">CP1</string>
+    <string name="salle5">S20</string>
+
+    <string name="senace1">TD</string>
+    <string name="senace2">TP</string>
+    <string name="senace3">COURS</string>
+    <string name="senace4">PROJET</string>
+
+
+
+
+
+
+
+
+
+
+
+</resources>
