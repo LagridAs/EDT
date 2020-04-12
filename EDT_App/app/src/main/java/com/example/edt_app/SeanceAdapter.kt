@@ -30,26 +30,18 @@ class SeanceAdapter(private val seanceList:MutableList<Seance>): RecyclerView.Ad
         private var nomSeance:TextView?=null
         private var dateSeance:TextView?=null
         private var salleSeance:TextView?=null
-        private var debSeance:TextView?=null
-        private var finSeance:TextView?=null
-        private var modName:TextView?=null
+        private var debfinSeance:TextView?=null
 
         init {
             nomSeance=itemView.findViewById(R.id.nomSeanceView)
-            dateSeance=itemView.findViewById(R.id.dateSeanceView)
             salleSeance=itemView.findViewById(R.id.salleSeanceView)
-            debSeance=itemView.findViewById(R.id.debSeanceView)
-            finSeance=itemView.findViewById(R.id.FinSeanceView)
-            modName=itemView.findViewById(R.id.moduleSeanceNameView)
+            debfinSeance=itemView.findViewById(R.id.debfinSeanceView)
         }
 
         fun bind(seance: Seance){
-            nomSeance?.text=seance.nom
-            salleSeance?.text=seance.salle
-            debSeance?.text=seance.tempsDeb
-            finSeance?.text=seance.tempsFin
-            modName?.text=seance.module?.intitule
-
+            nomSeance?.text=(seance.nom).plus(" ").plus(seance.module?.intitule)
+            salleSeance?.text="Dans la salle".plus(seance.salle)
+            debfinSeance?.text="De".plus(" ").plus(seance.tempsDeb)?.plus(" ").plus("a").plus(" ").plus(seance.tempsFin)
             itemView?.setOnClickListener{
                 onItemClick?.invoke(seance)
             }

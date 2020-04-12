@@ -5,11 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".SeanceListFragment">
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/seanceGrand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical"
-        android:id="@+id/seanceGrand"/>
+        android:background="#E4593947"
+        android:scrollbars="vertical" />
 
 
 

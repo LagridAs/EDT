@@ -15,6 +15,7 @@ class DetailsModFragment : Fragment() {
     private var intituleView:TextView?=null
     private var dureeView:TextView?=null
     private var ensView:TextView?=null
+    private var detailsnomView:TextView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +37,13 @@ class DetailsModFragment : Fragment() {
         intituleView= v?.findViewById(R.id.intituleModView)
         dureeView= v?.findViewById(R.id.dureeModView)
         ensView=v?.findViewById(R.id.ensModView)
+        detailsnomView=v?.findViewById(R.id.nomDetailModView)
 
         seance= arguments?.getSerializable("seance") as Seance
         intituleView?.text=seance.module?.intitule
-        dureeView?.text=seance.module?.duree.toString()
-        ensView?.text=seance.module?.ens?.nom
+        dureeView?.text="a".plus(" ").plus(seance.module?.duree.toString()).plus(" ").plus("heures par Semaine")
+        ensView?.text="Ens".plus(" ").plus(seance.module?.ens?.nom)
+        detailsnomView?.text="Module".plus(" ").plus(seance.module?.nomdetails)
 
 
         val fragment=DetailsEnsFragment()

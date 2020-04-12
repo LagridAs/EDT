@@ -87,11 +87,11 @@ class DetailsSeanceActivity : AppCompatActivity(),CommJour,CommSeance {
             )
 
             moduleList = mutableListOf(
-                Module(getString(R.string.module1), 2, ensList[0]),
-                Module(getString(R.string.module2), 2, ensList[1]),
-                Module(getString(R.string.module3), 2, ensList[2]),
-                Module(getString(R.string.module4), 2, ensList[3]),
-                Module(getString(R.string.module5), 2, ensList[4])
+                Module(getString(R.string.module1),getString(R.string.DetailsNom1), 2, ensList[0]),
+                Module(getString(R.string.module2),getString(R.string.DetailsNom2), 2, ensList[1]),
+                Module(getString(R.string.module3),getString(R.string.DetailsNom3), 2, ensList[2]),
+                Module(getString(R.string.module4),getString(R.string.DetailsNom4), 2, ensList[3]),
+                Module(getString(R.string.module5),getString(R.string.DetailsNom5), 2, ensList[4])
             )
 
             Log.d(ContentValues.TAG, "tahtiii kayen hadikk ta3 localTimeeeeeee")

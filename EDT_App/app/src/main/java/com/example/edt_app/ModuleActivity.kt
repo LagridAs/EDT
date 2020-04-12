@@ -17,9 +17,10 @@ class ModuleActivity : AppCompatActivity() ,CommSeance{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_module)
             seance=intent.getSerializableExtra("seance") as Seance
+            nomDetailModView2.text= "Module".plus(" ").plus(seance.module?.nomdetails)
             intituleModView2.text= seance.module?.intitule
-            dureeModView2.text= seance.module?.duree.toString()
-            ensModView2.text=seance.module?.ens?.nom
+            dureeModView2.text= "a".plus(" ").plus(seance.module?.duree.toString()).plus(" ").plus("heures par Semaine")
+            ensModView2.text="Ens".plus(" ").plus(seance.module?.ens?.nom)
 
 
         ensModView2.setOnClickListener{
