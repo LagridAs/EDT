@@ -6,7 +6,6 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 data class Seance(val nom:String?,
-                  val date: String?,
                   val tempsDeb:String?,
                   val tempsFin:String?,
                   val module:Module?,

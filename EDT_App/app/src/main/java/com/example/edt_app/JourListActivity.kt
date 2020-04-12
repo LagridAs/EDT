@@ -6,9 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_jour_list.*
 import kotlinx.android.synthetic.main.activity_main.*
 
-class JourListActivity : AppCompatActivity() {
+class JourListActivity : AppCompatActivity(),CommJour {
 
     private lateinit var jourAdapter:JourAdapter
     private lateinit var jourList:MutableList<Jour>
@@ -17,7 +18,7 @@ class JourListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_jour_list)
 
         jourList= mutableListOf(
             Jour(JourEnum.DIMANCHE,4),

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JourListActivity"></activity>
+        <activity android:name=".DetailsSeance2Activity"></activity>
+        <activity android:name=".ModuleActivity" />
+        <activity android:name=".SeanceActivity" />
+        <activity android:name=".JourListActivity" />
         <activity android:name=".DetailsSeanceActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

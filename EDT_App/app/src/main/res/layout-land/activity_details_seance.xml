@@ -6,49 +6,65 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="2"
-    android:id="@+id/moduleplace"
     tools:context=".DetailsSeanceActivity">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_marginRight="10dp"
-        android:layout_weight="1">
+        android:weightSum="2"
+        android:layout_weight="1"
+        android:layout_marginEnd="10dp">
 
         <CalendarView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:firstDayOfWeek="2"
+            android:maxDate="01/01/2021"
+            android:minDate="04/12/2020"
+            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:firstDayOfWeek="2"
-            android:maxDate="01/01/2021"
-            android:minDate="04/11/2020"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="NestedWeights" />
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_weight="1"
+               android:layout_marginTop="5dp"
+               android:orientation="vertical"
+               android:id="@+id/listSeance"/>
 
-        <!--androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/appCompatTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/jour"
-            />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerSeance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-             /-->
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="10dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_marginStart="10dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/moduleP"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="NestedWeights" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ensP"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
 
 
 

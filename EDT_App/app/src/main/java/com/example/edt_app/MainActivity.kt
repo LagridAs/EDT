@@ -2,48 +2,34 @@ package com.example.edt_app
 
 import android.content.ContentValues
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(),CommJour {
-    private lateinit var jourAdapter:JourAdapter
-    private lateinit var jourList:MutableList<Jour>
-    private lateinit var linearLayoutManager:LinearLayoutManager
 
-
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        jourList= mutableListOf(
-            Jour(JourEnum.DIMANCHE,4),
-            Jour(JourEnum.LUNDI,3),
-            Jour(JourEnum.MARDI,2),
-            Jour(JourEnum.MERCREDI,4),
-            Jour(JourEnum.JEUDI,3)
-        )
+        val tablet = resources.getBoolean(R.bool.isTablet)
+        val land = resources.getBoolean(R.bool.isLand)
 
-        jourAdapter=JourAdapter(jourList)
-        linearLayoutManager = LinearLayoutManager(this)
-        recyclerJour.apply {
-            Log.d(ContentValues.TAG,"initialisinaaa recyclerview")
-            adapter= jourAdapter
-            layoutManager= linearLayoutManager
-            Log.d(ContentValues.TAG,"khrejna recyclerview")
+        startBtn.setOnClickListener{
+            if(tablet ||land){
+                Log.d(ContentValues.TAG,"dakhal tablet ou land")
+                val intent1 = Intent(this@MainActivity,DetailsSeanceActivity::class.java)
+                startActivity(intent1)
+            }
+            else{
+                Log.d(ContentValues.TAG,"dakhal portrait")
+                val intent1 = Intent(this@MainActivity,JourListActivity::class.java)
+                startActivity(intent1)
+
+            }
 
         }
 
-        jourAdapter.onItemClick = { jour ->
-            jrComm(jour)
-            Log.d(ContentValues.TAG,"passina jour")
-        }
     }
-    override fun jrComm(jour: Jour) {
-        Log.d(ContentValues.TAG,"dakhal jrComm")
-        val intent = Intent(this@MainActivity,DetailsSeanceActivity::class.java)
-        intent.putExtra("jour",jour)
-        startActivity(intent) }
 }

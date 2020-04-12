@@ -44,7 +44,7 @@ class DetailsModFragment : Fragment() {
 
 
         val fragment=DetailsEnsFragment()
-        val reference= R.id.moduleplace
+        val reference= R.id.ensP
         ensView?.setOnClickListener {
             comm.passSeance(seance,fragment,reference)
         }

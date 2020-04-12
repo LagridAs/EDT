@@ -45,10 +45,9 @@ class SeanceAdapter(private val seanceList:MutableList<Seance>): RecyclerView.Ad
 
         fun bind(seance: Seance){
             nomSeance?.text=seance.nom
-            dateSeance?.text=seance.date.toString()
             salleSeance?.text=seance.salle
-            debSeance?.text=seance.tempsDeb.toString()
-            finSeance?.text=seance.tempsFin.toString()
+            debSeance?.text=seance.tempsDeb
+            finSeance?.text=seance.tempsFin
             modName?.text=seance.module?.intitule
 
             itemView?.setOnClickListener{
