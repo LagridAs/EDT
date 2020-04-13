@@ -8,11 +8,13 @@
     >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
-        android:layout_height="160dp"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
         app:cardBackgroundColor="#C9EDAC97"
         app:cardCornerRadius="20dp"
         app:cardElevation="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.173"
@@ -27,13 +29,13 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/salleSeanceView"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:text="@string/sallede"
                 android:textAlignment="textStart"
                 android:textColor="#ffffff"
-                android:textSize="19sp"
+                android:textSize="16sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -44,13 +46,13 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/nomSeanceView"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="start"
                 android:text="@string/nomdesenace"
                 android:textAlignment="textStart"
                 android:textColor="#ffffff"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +69,7 @@
                 android:text="@string/deb"
                 android:textAlignment="textStart"
                 android:textColor="@color/move"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +80,7 @@
 
             <View
                 android:id="@+id/view"
-                android:layout_width="150dp"
+                android:layout_width="105dp"
                 android:layout_height="3dp"
                 android:background="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"

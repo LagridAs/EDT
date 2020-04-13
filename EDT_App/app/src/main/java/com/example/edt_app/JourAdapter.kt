@@ -49,8 +49,6 @@ class JourAdapter(private val jourList: MutableList<Jour>): RecyclerView.Adapter
             nbrSView?.text= jr.nbrSeance.toString().plus(" ").plus("Seances")
             Log.d(ContentValues.TAG,"dakhal bind")
 
-
-
             itemView?.setOnClickListener{
                 onItemClick?.invoke(jr)
             }

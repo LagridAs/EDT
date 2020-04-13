@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:weightSum="2"
-    tools:context=".DetailsSeanceActivity">
+    android:background="#ffffff"
+    tools:context=".DetailsSeanceActivity"
+    android:baselineAligned="false">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginRight="10dp"
         android:weightSum="3"
         android:layout_weight="1"
-        android:layout_marginEnd="10dp">
+        >
 
         <CalendarView
             android:id="@+id/calendarView"
@@ -24,7 +25,6 @@
             android:firstDayOfWeek="2"
             android:maxDate="01/01/2021"
             android:minDate="04/12/2020"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -32,13 +32,13 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="NestedWeights" />
+
         <LinearLayout
+            android:id="@+id/listSeance"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical"
-            android:id="@+id/listSeance"/>
+            android:orientation="vertical" />
 
     </LinearLayout>
     <LinearLayout
@@ -48,18 +48,16 @@
         android:layout_weight="1"
         android:weightSum="2"
         android:orientation="vertical"
-        android:layout_marginStart="10dp">
+        >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/moduleP"
             android:layout_weight="1"
-            android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="NestedWeights" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ensP"
-            android:layout_marginTop="5dp"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>

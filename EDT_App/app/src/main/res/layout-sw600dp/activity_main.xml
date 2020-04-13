@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -11,10 +12,11 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="Emploi du temps ETUDIANT"
         android:textAlignment="center"
         android:textColor="@color/move"
-        android:textSize="40dp"
+        android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,14 +29,14 @@
         android:id="@+id/appCompatImageView"
         android:layout_width="497dp"
         android:layout_height="429dp"
-        android:layout_marginBottom="268dp"
         android:scaleType="fitXY"
         android:src="@drawable/pic2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView3"
+        app:layout_constraintVertical_bias="0.209" />
 
     <Button
         android:id="@+id/startBtn"
@@ -42,9 +44,12 @@
         android:layout_height="60dp"
         android:background="#05A9BD"
         android:text="Welcome"
-        android:textSize="24dp"
-        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center"
         android:textStyle="bold"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
